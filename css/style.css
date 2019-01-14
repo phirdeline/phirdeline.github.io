@@ -1,0 +1,45 @@
+.red{
+	color:red
+}
+.cyan{
+	color:cyan
+}
+.b{
+	font-weight:bold
+}
+.i{
+	font-style:italic
+}
+.green{
+	color:#00b050
+}
+.strike{
+	text-decoration:line-through;
+}
+.u{
+	text-decoration:underline;
+}
+.blue{
+	color:#0070c0;
+}
+.social{
+	width:100
+}
+.sub{
+	vertical-align: sub
+}
+.sup{
+	vertical-align: super
+}
+.alCenter{
+	text-align-last: center
+}
+.bgRed{
+	background-color: red
+}
+.bgYellow{
+	background-color: yellow
+}
+.bgGreen{
+	background-color: green
+}
