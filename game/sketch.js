@@ -504,6 +504,7 @@ function eval(s){
 }
 function nextChar() {
   ch = (++pos < str.length()) ? str.charAt(pos) : -1;
+  return 0;
 }
 function eat(charToEat) {
   while (ch == ' ') nextChar();
