@@ -33,11 +33,11 @@ function setup() {
   cRed = color(220, 90, 90);
   cGreen = color(100, 200, 100);
   p0Score = 0; p1Score = 0;
-  p0OptionXs = new array(3);
-  p0OptionYs = new array(2);
-  main = new array(6);
-  sign = new array(5);
-  option = new array(6);
+  p0OptionXs = new Array(3);
+  p0OptionYs = new Array(2);
+  main = new Array(6);
+  sign = new Array(5);
+  option = new Array(6);
   gameState = 1;
   numRange = 100;
   
