@@ -25,7 +25,7 @@ var gameState;
 var numRange;
 var startingScreen;
 
-void setup() {
+function setup() {
   
   cWhite = color(255);
   cBlue = color(40, 37, 124);
@@ -129,7 +129,7 @@ void setup() {
   startingScreen = true;
 };
 
-void draw() {
+function draw() {
   textSize(textSize1);
   background(cWhite);
 
@@ -382,7 +382,7 @@ void draw() {
   };
 };
 
-void switchGameState(k, rightInd, player) {
+function switchGameState(k, rightInd, player) {
   switch(gameState) {
   case 1:
     gameState = 2;
