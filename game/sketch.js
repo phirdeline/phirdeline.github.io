@@ -515,7 +515,7 @@ function eat(charToEat) {
 }
 function parse() {
   nextChar();
-  function x = parseExpression();
+  var x = parseExpression();
 //   if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
   if (pos < str.length()) throw 0;
   return x;
