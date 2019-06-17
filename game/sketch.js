@@ -503,7 +503,12 @@ function eval(s){
   return parse();
 }
 function nextChar() {
-  ch = (++pos < str.length()) ? str.charAt(pos) : -1;
+  pos++;
+  if(pos < str.length())
+    ch = str.charAt(pos)
+  else
+    ch = -1;
+//   ch = (++pos < str.length()) ? str.charAt(pos) : -1;
   return 0;
 }
 function eat(charToEat) {
