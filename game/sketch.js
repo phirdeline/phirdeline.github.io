@@ -504,7 +504,7 @@ function eval(s){
 }
 function nextChar() {
   pos++;
-  if(pos < str.length())
+  if(pos < str.length)
     ch = str.charAt(pos)
   else
     ch = -1;
@@ -523,7 +523,7 @@ function parse() {
   nextChar();
   var x = parseExpression();
 //   if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
-  if (pos < str.length()) throw 0;
+  if (pos < str.length) throw 0;
   return x;
 }
 function parseExpression() {
