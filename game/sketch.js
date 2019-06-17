@@ -496,78 +496,78 @@ function toRadians (angle) {
   return angle * (Math.PI / 180);
 }
 
-var pos, ch, str;
-function eval(s){
-  str = s;
-  pos = -1;
-  return parse();
-}
-function nextChar() {
-  pos++;
-  if(pos < str.length)
-    ch = str.charAt(pos)
-  else
-    ch = -1;
-//   ch = (++pos < str.length()) ? str.charAt(pos) : -1;
-  return 0;
-}
-function eat(charToEat) {
-  while (ch == ' ') nextChar();
-  if (ch == charToEat) {
-    nextChar();
-    return true;
-  }
-  return false;
-}
-function parse() {
-  nextChar();
-  var x = parseExpression();
-//   if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
-  if (pos < str.length) throw 0;
-  return x;
-}
-function parseExpression() {
-  var x = parseTerm();
-  for (;; ) {
-    if      (eat('+')) x += parseTerm(); // addition
-    else if (eat('-')) x -= parseTerm(); // subtraction
-    else return x;
-  }
-}
-function parseTerm() {
-  var x = parseFactor();
-  for (;; ) {
-    if      (eat('*')) x *= parseFactor(); // multiplication
-    else if (eat('/')) x /= parseFactor(); // division
-    else return x;
-  }
-}
-function parseFactor() {
-  if (eat('+')) return parseFactor(); // unary plus
-  if (eat('-')) return -parseFactor(); // unary minus
-  var x;
-  var startPos = pos;
-  if (eat('(')) { // parentheses
-    x = parseExpression();
-    eat(')');
-  } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
-    while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
-    x = parseFloat(str.substring(startPos, pos));
-  } else if (ch >= 'a' && ch <= 'z') { // functions
-    while (ch >= 'a' && ch <= 'z') nextChar();
-    var func = str.substring(startPos, pos);
-    x = parseFactor();
-    if (func.equals("sqrt")) x = Math.sqrt(x);
-    else if (func.equals("sin")) x = Math.sin(toRadians(x));
-    else if (func.equals("cos")) x = Math.cos(toRadians(x));
-    else if (func.equals("tan")) x = Math.tan(toRadians(x));
-    else 
-//       throw new RuntimeException("Unknown function: " + func);
-      throw 0;
-  } else {
-//     throw new RuntimeException("Unexpected: " + (char)ch);
-    throw 0;
-  }
-  if (eat('^')) x = Math.pow(x, parseFactor()); // exponentiation
-  return x;
-}
+// var pos, ch, str;
+// function eval(s){
+//   str = s;
+//   pos = -1;
+//   return parse();
+// }
+// function nextChar() {
+//   pos++;
+//   if(pos < str.length)
+//     ch = str.charAt(pos)
+//   else
+//     ch = -1;
+// //   ch = (++pos < str.length()) ? str.charAt(pos) : -1;
+//   return 0;
+// }
+// function eat(charToEat) {
+//   while (ch == ' ') nextChar();
+//   if (ch == charToEat) {
+//     nextChar();
+//     return true;
+//   }
+//   return false;
+// }
+// function parse() {
+//   nextChar();
+//   var x = parseExpression();
+// //   if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
+//   if (pos < str.length) throw 0;
+//   return x;
+// }
+// function parseExpression() {
+//   var x = parseTerm();
+//   for (;; ) {
+//     if      (eat('+')) x += parseTerm(); // addition
+//     else if (eat('-')) x -= parseTerm(); // subtraction
+//     else return x;
+//   }
+// }
+// function parseTerm() {
+//   var x = parseFactor();
+//   for (;; ) {
+//     if      (eat('*')) x *= parseFactor(); // multiplication
+//     else if (eat('/')) x /= parseFactor(); // division
+//     else return x;
+//   }
+// }
+// function parseFactor() {
+//   if (eat('+')) return parseFactor(); // unary plus
+//   if (eat('-')) return -parseFactor(); // unary minus
+//   var x;
+//   var startPos = pos;
+//   if (eat('(')) { // parentheses
+//     x = parseExpression();
+//     eat(')');
+//   } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
+//     while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
+//     x = parseFloat(str.substring(startPos, pos));
+//   } else if (ch >= 'a' && ch <= 'z') { // functions
+//     while (ch >= 'a' && ch <= 'z') nextChar();
+//     var func = str.substring(startPos, pos);
+//     x = parseFactor();
+//     if (func.equals("sqrt")) x = Math.sqrt(x);
+//     else if (func.equals("sin")) x = Math.sin(toRadians(x));
+//     else if (func.equals("cos")) x = Math.cos(toRadians(x));
+//     else if (func.equals("tan")) x = Math.tan(toRadians(x));
+//     else 
+// //       throw new RuntimeException("Unknown function: " + func);
+//       throw 0;
+//   } else {
+// //     throw new RuntimeException("Unexpected: " + (char)ch);
+//     throw 0;
+//   }
+//   if (eat('^')) x = Math.pow(x, parseFactor()); // exponentiation
+//   return x;
+// }
